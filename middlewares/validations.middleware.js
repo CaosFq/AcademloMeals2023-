@@ -51,3 +51,9 @@ exports.createMealValidation = [
   check('price', 'the price is required').not().isEmpty(),
   check('price', 'the price must be numeric').isNumeric(),
 ];
+
+exports.updateMealValidation = [
+  check('name', 'the name is required').not().isEmpty(),
+  check('price', 'the price is required').not().isEmpty(),
+  check('price', 'the price must be numeric').isNumeric(),
+];
