@@ -35,3 +35,15 @@ exports.login = catchAsync(async (req, res, next) =>{
     },
   });
 });
+
+exports.updateUser = catchAsync(async (req, res, next) => {
+  const { name, email } = req.body;
+  const { user } = req;
+
+  await user.update({ name, email });
+
+  return res.status(200).json({
+    status: 'success',
+    message: 'The user has been update😁',
+  });
+});

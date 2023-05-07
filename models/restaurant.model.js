@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { db } = require('../database/db');
 
-const Restaurant = db.define('restaurants', {
+const Restaurant = db.define('restaurant', {
   id: {
     primaryKey: true,
     autoIncrement: true,
@@ -21,9 +21,9 @@ const Restaurant = db.define('restaurants', {
     allowNull: false,
   },
   status: {
-    type: DataTypes.ENUM('active', 'disable'),
+    type: DataTypes.BOOLEAN,
     allowNull: false,
-    defaultValue: 'active',
+    defaultValue: true,
   },
 });
 

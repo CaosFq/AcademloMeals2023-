@@ -8,14 +8,14 @@ const { restaurantRouter } = require('../routes/restaurant.route');
 const { mealRouter } = require('../routes/meal.route');
 const { oderRouter } = require('../routes/order.route');
 const initModel = require('./init.model');
-const AppError = require('../utils/appError');
+const AppError = require('./../utils/appError');
 const globalErrorHandler = require('../controllers/error.controller');
 
 
 class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT || 3003;
+    this.port = process.env.PORT || 3002;
 
     //Path Routes
     this.paths = {
