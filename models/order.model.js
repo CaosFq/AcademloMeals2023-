@@ -17,7 +17,7 @@ const Order = db.define('order', {
     allowNull: false,
   },
   totalPrice: {
-    type: DataTypes.DECIMAL(10, 2),
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
   quantity: {
@@ -25,10 +25,9 @@ const Order = db.define('order', {
     allowNull: false,
   },
   status: {
-    type: DataTypes.STRING,
+    type: DataTypes.BOOLEAN,
     allowNull: false,
-    enum: ['active', 'cancelled', 'completed'],
-    defaultValue: 'active',
+    defaultValue: 'true',
   },
 });
 

@@ -1,6 +1,11 @@
 const { validationResult, check } = require('express-validator');
+
 exports.validateFields = (req, res, next) => {
+
+
   const errors = validationResult(req);
+
+
   if (!errors.isEmpty()) {
     return res.status(400).json(errors);
   }
@@ -56,4 +61,11 @@ exports.updateMealValidation = [
   check('name', 'the name is required').not().isEmpty(),
   check('price', 'the price is required').not().isEmpty(),
   check('price', 'the price must be numeric').isNumeric(),
+];
+
+exports.createOrderValidation = [
+  check('quantity', 'the quantity is required').not().isEmpty(),
+  check('quantity', 'the quantity must be numeric').isNumeric(),
+  check('mealId', 'the mealId is required').not().isEmpty(),
+  check('mealId', 'the MealId must be numeric').isNumeric(),
 ];
