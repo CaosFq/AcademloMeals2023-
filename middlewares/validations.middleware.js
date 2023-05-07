@@ -45,3 +45,9 @@ exports.createReviewValidation = [
   check('rating', 'the rating is required').not().isEmpty(),
   check('rating', 'the rating must be numeric').isNumeric(),
 ];
+
+exports.createMealValidation = [
+  check('name', 'the comment is required').not().isEmpty(),
+  check('price', 'the price is required').not().isEmpty(),
+  check('price', 'the price must be numeric').isNumeric(),
+];
